@@ -1,8 +1,6 @@
 import axios from 'axios'
 
-// VITE_API_BASE_URL is set to the Render backend URL in production.
-// In local dev it's empty and Vite's proxy handles /api → localhost:4000.
-const api = axios.create({ baseURL: (import.meta.env.VITE_API_BASE_URL || '') + '/api', withCredentials: true })
+const api = axios.create({ baseURL: '/api', withCredentials: true })
 
 let isRefreshing = false
 let failedQueue = []
